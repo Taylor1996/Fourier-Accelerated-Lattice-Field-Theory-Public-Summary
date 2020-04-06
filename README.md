@@ -39,7 +39,7 @@ And these correspond to different motions of our quantum mechanical harmonic osc
 The particular paths traced out in the plot above were generated with a certain variant of MCMC called Hamiltonian Monte Carlo (HMC). This algorithm has a few steps which we briefly summarize here:
 1. Guess some initial path for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
 
-2.Generate a momentum p_n for each lattice point. The momentum is chosen randomly so that the probability that p<sub>_n</sub> = e<sup>-1/2 p*p</sup>
+2.Generate a momentum p_n for each lattice point. The momentum is chosen from a Gaussian probability distribution, which means that the probability of picking $p_n$ so that it equals $p^*_n \pm dp$ is proportional to $\exp(- \frac{1}{2} p^2)$.
 
 
 
