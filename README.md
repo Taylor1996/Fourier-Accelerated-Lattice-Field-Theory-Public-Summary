@@ -1,12 +1,6 @@
-## This is the homepage for the public summary of my MPhys project, Fourier accelerated lattice field theory.
+### This is the homepage for the public summary of my MPhys project, Fourier accelerated lattice field theory.
 
 
-
-
-
-# Header 1
-## Header 2
-### Header 3
 
 - Bulleted  
 - List
