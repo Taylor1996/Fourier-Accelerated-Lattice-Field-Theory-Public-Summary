@@ -48,9 +48,14 @@ The particular paths traced out in the plot above were generated with a certain 
 
 3.Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations F=ma and distance=speed   x<sub>n</sub> positions are at a later time.
 
-4.Now we choose to make this path our next path, path #2, only with some probability min(1,e <sup>-(H <sub>new</sub> - H <sub>old</sub>)</sup>). This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.
-<img src="https://latex.codecogs.com/gif.latex?e%5E%7Bi%5Cpi%7D%3D-1">
-5. Steps 2-4 are repeated as many times as desired (the more time, the more accurate our results).
+4.Now we choose to make this path our next path, path #2, only with some probability min(1,e <sup>-(H <sub>new</sub> - H <sub>old</sub>)</sup>). This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.<img src="https://latex.codecogs.com/gif.latex?e%5E%7Bi%5Cpi%7D%3D-1">
+5.Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results).
+
+HMC is very effective and gives accurate reslts for many applications in lattice field theory and beyond.
+One place where it struggles a bit however is when we try and make our lattice finer and finer so that there is little distance between successive lattice points. This is referred to as "going to the continuum limit". When we try and do that, the paths we generate tend to become very similar to the ones which came just before them in our chain of paths (they are highly autocorrelated). This leads to our results having a lot of associated error. 
+
+One way to combat this is named Fourier acceleration and a focus of my project. How Fourier acceleration goes about alleviating the issue of autocorrelated data is by changing how we do the Hamiltonian dynamics step of HMC (step 3). In particular, it ensures that the physics happening at long length scales (kind of like communication between the lattice points at the far left and right edges of the lattice) occurs just as fast as the physics at short length scales (communication between adjacent lattice points). If we don't Fourier accelerate, we find that the long range physics takes much longer to occur and acts like a bottlenck on the simulations, causing lots of autocorrelation and therefore requiring longer simulation time. Below gives a comparison of a few paths produced by unaccelerated (left) and accelerated HMC (right).
+
 
 
 
