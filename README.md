@@ -18,7 +18,9 @@ In order to get an idea of how we carry out lattice field simulations on a compu
 
 Now, suppose you were to set up a frictionless table, and place on top of such a contraption consisting of a weight connected to a wall via a spring. You pull the mass away from its equilibrium point where it was stationary and let go. What you see is the motion below:
 
+![classical_final](https://user-images.githubusercontent.com/26764889/78579416-cd808b80-7828-11ea-942f-05630130c676.gif)
 
+Now, in the case of a quantum 
 
 
 
