@@ -44,7 +44,7 @@ The particular paths traced out in the plot above were generated with a certain 
 
 1.Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
 
-2.Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen from a Gaussian probability distribution, which means that the probability of picking p<sub>n</sub> so that it equals p<sub>n</sub> &plusmn; dp$ is proportional to e<sup>(-)</sup>.
+2.Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a [Gaussian probability](https://www.wikiwand.com/en/Normal_distribution).
 
 3.Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations F=ma and distance=speed   x<sub>n</sub> positions are at a later time.
 
@@ -56,7 +56,7 @@ One place where it struggles a bit however is when we try and make our lattice f
 
 One way to combat this is named Fourier acceleration and a focus of my project. How Fourier acceleration goes about alleviating the issue of autocorrelated data is by changing how we do the Hamiltonian dynamics step of HMC (step 3). In particular, it ensures that the physics happening at long length scales (kind of like communication between the lattice points at the far left and right edges of the lattice) occurs just as fast as the physics at short length scales (communication between adjacent lattice points). If we don't Fourier accelerate, we find that the long range physics takes much longer to occur and acts like a bottlenck on the simulations, causing lots of autocorrelation and therefore requiring longer simulation time. Below gives a comparison of a few paths produced by unaccelerated (left) and accelerated HMC (right).
 
-
+<img src="https://user-images.githubusercontent.com/26764889/78605443-6e843c00-7853-11ea-9eda-b19b18645559.png">   <img src="https://user-images.githubusercontent.com/26764889/78605397-57454e80-7853-11ea-9851-89f7e20aacd2.png">
 
 
 
