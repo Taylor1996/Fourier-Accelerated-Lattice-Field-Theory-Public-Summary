@@ -26,7 +26,9 @@ Now, in the case of a quantum mechanical version of this harmonic oscillator, we
 
 As a consequence, there are infinitely many ways that the mass could have oscillated about on its spring (referred to as _paths_) in the quantum mechanical case. Albeit, some of these are more likely to be realized than others.
 
-So how does all of this relate to our computer simulations? Well, it turns out that everything we may want to know about our quantum mass on a spring system is encoded in a mathematical object called the **path integral**. And without going into too much detail, this path integral is simply a sum of all those paths we talked about. Each of these paths are assigned a _weight_ - some probability that the path in question is that which the system follows.
+So how does all of this relate to our computer simulations? Well, it turns out that everything we may want to know about our quantum mass on a spring system is encoded in a mathematical object called the **path integral**. And without going into too much detail, this path integral is simply a sum of all those paths we talked about. Each of these paths are assigned a _weight_ - some probability that the path in question is that which the system follows. To simply add up all of these paths in a naive approach would be a lot of work (an infinite amount actually). Instead we use computational methods, called **Markov chain Monte Carlo** methods, to efficiently sum up these paths by choosing to look at paths with a greater probabilistic weight more often. This is termed importance sampling.
+
+
 
 
 
