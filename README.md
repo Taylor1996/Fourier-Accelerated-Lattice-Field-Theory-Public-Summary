@@ -41,21 +41,24 @@ And these correspond to different motions of our quantum mechanical harmonic osc
 
 
 The particular paths traced out in the plot above were generated with a certain variant of MCMC called Hamiltonian Monte Carlo (HMC). This algorithm has a few steps which we briefly summarize here:
+
+
 <p style="text-align: center;">  
  <ol>
 <li> Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.</li>
 
-<li> Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a <a href="https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true">Gaussian probability</a>
+<li> Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a <a href="https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true">Gaussian probability</a>.</li>
 
-<li> Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time</li>
+<li> Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time.</li>
 
-<li>Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before</li>
+<li>Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.</li>
 
-<li>Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results)</li>
+<li>Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results).</li>
 </ol>
 </p>
 HMC is very effective and gives accurate reslts for many applications in lattice field theory and beyond.
 One place where it struggles a bit however is when we try and make our lattice finer and finer so that there is little distance between successive lattice points. This is referred to as "going to the continuum limit". When we try and do that, the paths we generate tend to become very similar to the ones which came just before them in our chain of paths (they are highly autocorrelated). This leads to our results having a lot of associated error. 
+
 
 One way to combat this is named Fourier acceleration and a focus of my project. How Fourier acceleration goes about alleviating the issue of autocorrelated data is by changing how we do the Hamiltonian dynamics step of HMC (step 3). In particular, it ensures that the physics happening at long length scales (kind of like communication between the lattice points at the far left and right edges of the lattice) occurs just as fast as the physics at short length scales (communication between adjacent lattice points). If we don't Fourier accelerate, we find that the long range physics takes much longer to occur and acts like a bottlenck on the simulations, causing lots of autocorrelation and therefore requiring longer simulation time. Below gives a comparison of a few paths produced by unaccelerated (left) and accelerated HMC (right). We can see that without Fourier acceleration, the trio of successive paths are quite similar. However, once we accelerate, the paths look much more independent of each other.
 
