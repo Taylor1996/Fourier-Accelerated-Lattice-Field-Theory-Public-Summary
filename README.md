@@ -41,13 +41,16 @@ And these correspond to different motions of our quantum mechanical harmonic osc
 
 
 The particular paths traced out in the plot above were generated with a certain variant of MCMC called Hamiltonian Monte Carlo (HMC). This algorithm has a few steps which we briefly summarize here:
-1. Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
+
+1.Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
 
 2.Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen from a Gaussian probability distribution, which means that the probability of picking p<sub>n</sub> so that it equals p<sub>n</sub> &plusmn; dp$ is proportional to e<sup>(-)</sup>.
 
-3. Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar Newtonian equations of motion to see what the  x<sub>n</sub> positions are at a later time.
+3.Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations F=ma and distance=speed   x<sub>n</sub> positions are at a later time.
 
-4. Now we choose to make this path our next path, path #2, only with some probability min(1,e <sup>-(H <sub>new</sub> - H <sub>old</sub>)</sup>
+4.Now we choose to make this path our next path, path #2, only with some probability min(1,e <sup>-(H <sub>new</sub> - H <sub>old</sub>)</sup>)
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 
 
 
