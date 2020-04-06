@@ -49,7 +49,7 @@ The particular paths traced out in the plot above were generated with a certain 
 3.Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations F=ma and distance=speed   x<sub>n</sub> positions are at a later time.
 
 4.Now we choose to make this path our next path, path #2, only with some probability min(1,e <sup>-(H <sub>new</sub> - H <sub>old</sub>)</sup>)
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+<img src="https://latex.codecogs.com/gif.latex?e%5E%7Bi%5Cpi%7D%3D-1">
 
 
 
