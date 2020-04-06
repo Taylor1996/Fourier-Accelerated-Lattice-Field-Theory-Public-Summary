@@ -1,3 +1,4 @@
+{% include mathjax.html %}
 ### This is the homepage for the public summary of my MPhys project, Fourier accelerated lattice field theory.
 
 This public summary is aimed at those people who have completed Higher (or equivalent) level physics and like to read the science section of their favourite news website.
@@ -37,8 +38,8 @@ And these correspond to different motions of our quantum mechanical harmonic osc
 
 The particular paths traced out in the plot above were generated with a certain variant of MCMC called Hamiltonian Monte Carlo (HMC). This algorithm has a few steps which we briefly summarize here:
 1. Guess some initial path for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
-2.Generate a momentum p_n for each lattice point. The momentum is chosen randomly so that the probability that p_n
-2. Generate 
+
+2.Generate a momentum p_n for each lattice point. The momentum is chosen randomly so that the probability that p<sub>_n</sub> = e<sup>-1/2 p*p</sup>
 
 
 
