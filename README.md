@@ -48,8 +48,9 @@ The particular paths traced out in the plot above were generated with a certain 
 
 3.Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations F=ma and distance=speed   x<sub>n</sub> positions are at a later time.
 
-4.Now we choose to make this path our next path, path #2, only with some probability min(1,e <sup>-(H <sub>new</sub> - H <sub>old</sub>)</sup>)
+4.Now we choose to make this path our next path, path #2, only with some probability min(1,e <sup>-(H <sub>new</sub> - H <sub>old</sub>)</sup>). This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.
 <img src="https://latex.codecogs.com/gif.latex?e%5E%7Bi%5Cpi%7D%3D-1">
+5. Steps 2-4 are repeated as many times as desired (the more time, the more accurate our results).
 
 
 
