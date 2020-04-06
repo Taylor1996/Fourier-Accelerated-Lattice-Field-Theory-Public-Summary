@@ -42,15 +42,15 @@ And these correspond to different motions of our quantum mechanical harmonic osc
 
 The particular paths traced out in the plot above were generated with a certain variant of MCMC called Hamiltonian Monte Carlo (HMC). This algorithm has a few steps which we briefly summarize here:
 <p style="text-align: center;">  
-1. Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
+<li> Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.</li>
 
-2. Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a [Gaussian probability](https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true).
+<li> Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a [Gaussian probability](https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true).</li>
 
-3. Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time.
+<li> Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time</li>
 
-4. Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.
+<li>Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before</li>
 
-5. Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results).
+<li>Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results)</li>
 </p>
 HMC is very effective and gives accurate reslts for many applications in lattice field theory and beyond.
 One place where it struggles a bit however is when we try and make our lattice finer and finer so that there is little distance between successive lattice points. This is referred to as "going to the continuum limit". When we try and do that, the paths we generate tend to become very similar to the ones which came just before them in our chain of paths (they are highly autocorrelated). This leads to our results having a lot of associated error. 
