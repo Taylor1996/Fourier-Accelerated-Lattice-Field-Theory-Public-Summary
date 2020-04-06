@@ -41,16 +41,16 @@ And these correspond to different motions of our quantum mechanical harmonic osc
 
 
 The particular paths traced out in the plot above were generated with a certain variant of MCMC called Hamiltonian Monte Carlo (HMC). This algorithm has a few steps which we briefly summarize here:
-<p align="center">
-1.Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
+<p style="text-align: center;">  
+1. Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.
 
-2.Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a [Gaussian probability](https://www.wikiwand.com/en/Normal_distribution).
+2. Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a [Gaussian probability](https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true).
 
-3.Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and <img src="https://latex.codecogs.com/gif.latex?distance%20%3D%20speed%20%5Ctimes%20time"> to find what the positions are at a later time.
+3. Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time.
 
-4.Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.
+4. Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.
 
-5.Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results).
+5. Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results).
 </p>
 HMC is very effective and gives accurate reslts for many applications in lattice field theory and beyond.
 One place where it struggles a bit however is when we try and make our lattice finer and finer so that there is little distance between successive lattice points. This is referred to as "going to the continuum limit". When we try and do that, the paths we generate tend to become very similar to the ones which came just before them in our chain of paths (they are highly autocorrelated). This leads to our results having a lot of associated error. 
@@ -62,9 +62,8 @@ Standard HMC             |  Fourier accelerated HMC
 <img src="https://user-images.githubusercontent.com/26764889/78605443-6e843c00-7853-11ea-9eda-b19b18645559.png"> |    <img src="https://user-images.githubusercontent.com/26764889/78605397-57454e80-7853-11ea-9851-89f7e20aacd2.png">
 
  
-The physical systems to which I applied Fourier accelerated HMC in my project were free scalar field theory and interacting &phi;<sup>4</sup> fields. The only real difference between doing simulations for these fields and doing simulations of our quantum mechanical system is that for fields rather than generating a whole bunch of paths a particle can take through space and time, we instead generate a whole bunch of field configurations. Just think of one field configuration as a snapshot in time of the gif below. The hope is that by using this Fourier acceleration technique simulations can be peformed for finer lattices which better represent reality (where space and time is not one big lattice - as far as we know!)
+The physical systems to which I applied Fourier accelerated HMC in my project were free scalar field theory and interacting &phi;<sup>4</sup> fields. The only real difference between doing simulations for these fields and doing simulations of our quantum mechanical system is that for fields rather than generating a whole bunch of paths a particle can take through space and time, we instead generate a whole bunch of field configurations.  The hope is that by using this Fourier acceleration technique 
 
-![qft_configs](https://user-images.githubusercontent.com/26764889/78608621-25cf8180-7859-11ea-8573-4e10f615ca94.gif)
 
 
 
