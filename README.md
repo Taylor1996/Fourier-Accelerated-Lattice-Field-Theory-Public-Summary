@@ -2,8 +2,10 @@
 
 This public summary is aimed at those people who have completed Higher (or equivalent) level physics and like to read the science section of their favourite news website.
 
-Our current understanding of how fundamental particles interaction in our universe envisions them as being little excitations in "quantum fields" which permeate space and time. The figure below shows an impression of a field with a single peak (excitation) localized in space. This peak can be thought of as a particle.  
-![image](https://user-images.githubusercontent.com/26764889/78572038-dc624080-781e-11ea-9780-61a126b615f8.png)
+Our current understanding of how fundamental particles interaction in our universe envisions them as being little excitations in "quantum fields" which permeate space and time. The figure below shows an impression of a field with several peaks (excitations) localized in space. These peaks can be thought of as particles which can interact with each other (sometimes violently).  
+![image](https://user-images.githubusercontent.com/26764889/78590373-a5e5ef00-7839-11ea-82ea-e6295d1d22be.png)
+
+<!--![image](https://user-images.githubusercontent.com/26764889/78572038-dc624080-781e-11ea-9780-61a126b615f8.png)-->
 
 
 <!--![image](https://user-images.githubusercontent.com/26764889/78559293-0f4f0900-780c-11ea-9d3a-51cda3c59ae2.png)-->
