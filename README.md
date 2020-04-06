@@ -45,7 +45,7 @@ The particular paths traced out in the plot above were generated with a certain 
  <ol>
 <li> Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.</li>
 
-<li> Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a [Gaussian probability](https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true).</li>
+<li> Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a <a href="https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true">Gaussian probability</a>
 
 <li> Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time</li>
 
