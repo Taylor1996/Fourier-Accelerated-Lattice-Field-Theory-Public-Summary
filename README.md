@@ -4,7 +4,7 @@
 
 This public summary is aimed at those people who have completed Higher (or equivalent) level physics and like to read the science section of their favourite news website.
 
-Our current understanding of how fundamental particles interaction in our universe envisions them as being little excitations in "quantum fields" which permeate space and time. The figure below shows an impression of a field with several peaks (excitations) localized in space. These peaks can be thought of as particles which can interact with each other (sometimes violently).  
+Our current understanding of how fundamental particles interact in our universe envisions them as being little excitations in "quantum fields" which permeate space and time. The figure below shows an impression of a field with several peaks (excitations) localized in space. These peaks can be thought of as particles which can interact with each other (sometimes violently).  
 ![image](https://user-images.githubusercontent.com/26764889/78590373-a5e5ef00-7839-11ea-82ea-e6295d1d22be.png)
 
 <!--![image](https://user-images.githubusercontent.com/26764889/78572038-dc624080-781e-11ea-9780-61a126b615f8.png)-->
@@ -26,7 +26,7 @@ Now, suppose you were to set up a frictionless table, and place on top of such a
 
 If you pull the mass back the same distance and let go, you will observe the exact same motion every time.
 
-Now, in the case of a quantum mechanical version of this harmonic oscillator, we find that the motion can be quite different. In fact, each time you watch the oscillator move in time, you will see it do something slightly different. This is because in quantum mechanics, a particle's position is a probabilistic thing - there is some porbability that at time t after you let go of the mass that it is at position A. However, there is also some probability that it is at position B. Only when you measure its position can you say for certain where the mass is.
+Now, in the case of a quantum mechanical version of this harmonic oscillator, we find that the motion can be quite different. In fact, each time you watch the oscillator move in time, you will see it do something slightly different. This is because in quantum mechanics, a particle's position is a probabilistic thing - there is some probability that at time t after you let go of the mass that it is at position A. However, there is also some probability that it is at some different position, position B, and so on... Only when you measure its position can you say for certain where the mass is.
 
 As a consequence, there are infinitely many ways that the mass could have oscillated about on its spring (referred to as _paths_) in the quantum mechanical case. Albeit, some of these are more likely to be realized than others.
 
@@ -41,12 +41,12 @@ And these correspond to different motions of our quantum mechanical harmonic osc
 
 
 
-The particular paths traced out in the plot above were generated with a certain variant of MCMC called Hamiltonian Monte Carlo (HMC). This algorithm has a few steps which we briefly summarize here:
+The particular paths traced out in the plot above were generated with a certain variant of MCMC called **Hamiltonian Monte Carlo (HMC)**. This algorithm has a few steps which we briefly summarize here:
 
 
 <p style="text-align: center;">  
  <ol>
-<li> Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster HMC runs). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.</li>
+<li> Guess some initial path (path #1) for the system (it's not too important what it is but the more reasonable the faster we get accurate results). This initial guess could be the green path above. We see why the term "lattice" is used as we set up a lattice of time increments (the horizontal lines) and associate with each one an x position.</li>
 
 <li> Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a <a href="https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true">Gaussian probability</a>.</li>
 
@@ -58,7 +58,7 @@ The particular paths traced out in the plot above were generated with a certain 
 </ol>
 </p>
 HMC is very effective and gives accurate reslts for many applications in lattice field theory and beyond.
-One place where it struggles a bit however is when we try and make our lattice finer and finer so that there is little distance between successive lattice points. This is referred to as "going to the continuum limit". When we try and do that, the paths we generate tend to become very similar to the ones which came just before them in our chain of paths (they are highly autocorrelated). This leads to our results having a lot of associated error. 
+One place where it struggles a bit however is when we try and make our lattice finer and finer so that there is little distance between successive lattice points. This is referred to as "going to the continuum limit". When we try and do that, the paths we generate tend to become very similar to the ones which came just before them in our chain of paths (they are highly autocorrelated). This leads to our results having a lot of associated error. Interestingly, this same problem crops up when we try and look at the system right at a phase transition - a point right where it is switching from one phase to another (like ice to water in melting).
 
 
 One way to combat this is named Fourier acceleration and a focus of my project. How Fourier acceleration goes about alleviating the issue of autocorrelated data is by changing how we do the Hamiltonian dynamics step of HMC (step 3). In particular, it ensures that the physics happening at long length scales (kind of like communication between the lattice points at the far left and right edges of the lattice) occurs just as fast as the physics at short length scales (communication between adjacent lattice points). If we don't Fourier accelerate, we find that the long range physics takes much longer to occur and acts like a bottlenck on the simulations, causing lots of autocorrelation and therefore requiring longer simulation time. Below gives a comparison of a few paths produced by unaccelerated (left) and accelerated HMC (right). We can see that without Fourier acceleration, the trio of successive paths are quite similar. However, once we accelerate, the paths look much more independent of each other.
