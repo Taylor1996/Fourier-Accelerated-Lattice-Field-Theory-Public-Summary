@@ -1,6 +1,6 @@
 {% include mathjax.html %}
 <head>
- <title>Fourier Accelerated Lattice Field Theory</title>
+ Fourier Accelerated Lattice Field Theory
  </head>
 ### This is the homepage for the public summary of my MPhys project, Fourier accelerated lattice field theory.
 
