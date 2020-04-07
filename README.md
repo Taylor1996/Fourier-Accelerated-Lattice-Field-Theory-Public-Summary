@@ -1,8 +1,6 @@
 {% include mathjax.html %}
-<head>
- Fourier Accelerated Lattice Field Theory
- </head>
-### This is the homepage for the public summary of my MPhys project, Fourier accelerated lattice field theory.
+
+## This is the homepage for the public summary of my MPhys project, Fourier accelerated lattice field theory.
 
 This public summary is aimed at those people who have completed Higher (or equivalent) level physics and like to read the science section of their favourite news website.
 
