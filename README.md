@@ -53,7 +53,7 @@ The particular paths traced out in the plot above were generated with a certain 
 
 <li> Generate a momentum p<sub>n</sub> for each lattice point. The momentum is chosen with a <a href="https://en.wikipedia.org/wiki/Normal_distribution?oldformat=true">Gaussian probability</a>.</li>
 
-<li> Update the path to a _final_ path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time.</li>
+<li> Update the path to a <i>final</i> path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time.</li>
 
 <li>Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.</li>
 
