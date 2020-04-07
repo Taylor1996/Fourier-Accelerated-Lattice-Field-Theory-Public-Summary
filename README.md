@@ -13,9 +13,11 @@ Our current understanding of how fundamental particles interact in our universe 
 <!--![image](https://user-images.githubusercontent.com/26764889/78559293-0f4f0900-780c-11ea-9d3a-51cda3c59ae2.png)-->
 
 There are two main ways to study these fields theoretically in order to investigate properties of these particles:
-1. Blackboard calculations involving Feynman diagrams. ![image](https://user-images.githubusercontent.com/26764889/78655611-2bab7e00-78be-11ea-90f0-8518d2dd667f.png)
+1. Blackboard calculations involving Feynman diagrams which you may have seen before (see example below). 
 
 2. Simulate the fields on a computer (lattice field theory).
+
+![image](https://user-images.githubusercontent.com/26764889/78655611-2bab7e00-78be-11ea-90f0-8518d2dd667f.png)
 
 My project looked at the 2nd of these approaches which is particularly useful in certain cases (such as in the theory of _quantum chromodynamics_ which describes the physics of quarks, the constituents of protons and neutrons).
 
