@@ -55,7 +55,7 @@ The particular paths traced out in the plot above were generated with a certain 
 
 <li> Update the path to a <i>final</i> path via Hamiltonian dynamics. What this basically means is use the familiar equations <img src="https://latex.codecogs.com/gif.latex?F%3Dma"> and distance = speed x time to find what the positions are at a later time.</li>
 
-<li>Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.</li>
+<li>Now we choose to make this path our next path, path #2, only with some probability <img src="https://latex.codecogs.com/gif.latex?%5Cmin%281%2C%5Cexp%28-%28H_%7B%5Ctext%7Bnew%7D%7D-H_%7B%5Ctext%7Bold%7D%7D%29%29">, where the argument of the exponential can be thought of as the difference in energy between the old path and the new path. This particular choice is made so that we end up generating paths according to their probabilistic weighting as we mentioned before.</li>
 
 <li>Steps 2-4 are repeated as many times as desired (the more times, the more accurate our results).</li>
 </ol>
